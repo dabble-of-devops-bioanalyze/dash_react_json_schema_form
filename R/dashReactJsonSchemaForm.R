@@ -1,5 +1,6 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+#' @export
 dashReactJsonSchemaForm <- function(id=NULL, className=NULL, formData=NULL, label=NULL, schema=NULL, style=NULL, uiSchema=NULL) {
     
     props <- list(id=id, className=className, formData=formData, label=label, schema=schema, style=style, uiSchema=uiSchema)

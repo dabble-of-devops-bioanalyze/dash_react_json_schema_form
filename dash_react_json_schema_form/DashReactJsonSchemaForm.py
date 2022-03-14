@@ -5,7 +5,7 @@ from dash.development.base_component import Component, _explicitize_args
 
 class DashReactJsonSchemaForm(Component):
     """A DashReactJsonSchemaForm component.
-ExampleComponent is an example component.
+DashReactJsonSchemaForm is dash component to render react-json-schema-form forms.
 It takes a property, `label`, and
 displays it.
 It renders an input with the property `value`

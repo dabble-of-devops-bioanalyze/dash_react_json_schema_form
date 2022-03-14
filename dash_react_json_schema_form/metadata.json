@@ -1,6 +1,6 @@
 {
   "src/lib/components/DashReactJsonSchemaForm.react.js": {
-    "description": "ExampleComponent is an example component.\nIt takes a property, `label`, and\ndisplays it.\nIt renders an input with the property `value`\nwhich is editable by the user.",
+    "description": "DashReactJsonSchemaForm is dash component to render react-json-schema-form forms.\nIt takes a property, `label`, and\ndisplays it.\nIt renders an input with the property `value`\nwhich is editable by the user.",
     "displayName": "DashReactJsonSchemaForm",
     "methods": [
       {

@@ -19,7 +19,9 @@
     "build:backends": "dash-generate-components ./src/lib/components dash_react_json_schema_form -p package-info.json --r-prefix '' --jl-prefix '' --ignore \\.test\\.",
     "build:backends-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py_and_r)",
     "build": "npm run build:js && npm run build:backends",
-    "build:activated": "npm run build:js && npm run build:backends-activated"
+    "build:activated": "npm run build:js && npm run build:backends-activated",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags && rm -rf build/temp"
   },
   "author": "Jillian Rowe <jillian@dabbleofdevops.com>",
   "license": "Apache-2.0",

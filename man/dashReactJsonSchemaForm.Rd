@@ -6,7 +6,7 @@
 \title{DashReactJsonSchemaForm component}
 
 \description{
-ExampleComponent is an example component. It takes a property, `label`, and displays it. It renders an input with the property `value` which is editable by the user.
+DashReactJsonSchemaForm is dash component to render react-json-schema-form forms. It takes a property, `label`, and displays it. It renders an input with the property `value` which is editable by the user.
 }
 
 \usage{
