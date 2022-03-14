@@ -1,6 +1,6 @@
 {
   "name": "dash_react_json_schema_form",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Use React JSON Schema Form w with Dash",
   "repository": {
     "type": "git",
@@ -20,8 +20,7 @@
     "build:backends-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py_and_r)",
     "build": "npm run build:js && npm run build:backends",
     "build:activated": "npm run build:js && npm run build:backends-activated",
-    "version": "npm run build && git add -A dist",
-    "postversion": "git push && git push --tags && rm -rf build/temp"
+    "bump": "npm run build && npm version patch --force"
   },
   "author": "Jillian Rowe <jillian@dabbleofdevops.com>",
   "license": "Apache-2.0",
