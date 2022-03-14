@@ -1,0 +1,82 @@
+{
+  "src/lib/components/DashReactJsonSchemaForm.react.js": {
+    "description": "ExampleComponent is an example component.\nIt takes a property, `label`, and\ndisplays it.\nIt renders an input with the property `value`\nwhich is editable by the user.",
+    "displayName": "DashReactJsonSchemaForm",
+    "methods": [
+      {
+        "name": "onSubmit",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "{formData}",
+            "type": null
+          },
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "label": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "A label that will be printed when this component is rendered."
+      },
+      "schema": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The schema in the input."
+      },
+      "uiSchema": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The uiSchema in the input."
+      },
+      "formData": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The formData."
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Sets the class name of the element (the value of an element's html\nclass attribute)."
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Add inline styles to the root element."
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+      }
+    }
+  }
+}

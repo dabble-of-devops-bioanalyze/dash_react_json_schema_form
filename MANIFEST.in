@@ -1,0 +1,11 @@
+include dash_react_json_schema_form/dash_react_json_schema_form.min.js
+include dash_react_json_schema_form/dash_react_json_schema_form.min.js.map
+include dash_react_json_schema_form/async-*.js
+include dash_react_json_schema_form/async-*.js.map
+include dash_react_json_schema_form/*-shared.js
+include dash_react_json_schema_form/*-shared.js.map
+include dash_react_json_schema_form/metadata.json
+include dash_react_json_schema_form/package-info.json
+include README.md
+include LICENSE
+include package.json

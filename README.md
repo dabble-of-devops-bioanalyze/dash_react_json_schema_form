@@ -2,10 +2,14 @@
 
 Dash React JSON Schema Form is a Dash component library.
 
+It renders [react-json-schema-form](https://react-jsonschema-form.readthedocs.io/en/latest) as a Dash Component
+
 Get started with:
 1. Install Dash and its dependencies: https://dash.plotly.com/installation
 2. Run `python usage.py`
 3. Visit http://localhost:8050 in your web browser
+
+This package should work with the `R` language, but hasn't been tested yet.
 
 ## Contributing
 
