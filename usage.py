@@ -25,6 +25,7 @@ form = html.Div(
             },
             uiSchema={},
             formData={},
+            extraErrors={},
             label="my-label",
         ),
         html.Div(id="output"),

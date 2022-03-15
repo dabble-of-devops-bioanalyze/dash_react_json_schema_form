@@ -25,12 +25,12 @@ export default class DashReactJsonSchemaForm extends Component {
     }
 
     render() {
-        const { id, label, setProps, formData, schema, uiSchema } = this.props;
+        const { id, label, setProps, formData, schema, uiSchema, extraErrors } = this.props;
         const log = (type) => console.log.bind(console, type)
         const onSubmit = ({formData}) => console.log("yay I'm valid!");
 
         return (
-            <Form id={id} formData={this.props.formData} uiSchema={uiSchema} schema={schema}
+            <Form id={id} extraErrors={extraErrors} formData={this.props.formData} uiSchema={uiSchema} schema={schema}
                 onChange={
                     /*
                      * Send the new value to the parent component.
@@ -111,6 +111,11 @@ DashReactJsonSchemaForm.propTypes = {
      * The formData.
      */
     formData: PropTypes.object,
+
+    /**
+     * Extra Errors.
+     */
+    extraErrors: PropTypes.object,
 
     /**
      * Sets the class name of the element (the value of an element's html

@@ -20,6 +20,9 @@ Keyword arguments:
     Sets the class name of the element (the value of an element's html
     class attribute).
 
+- extraErrors (dict; optional):
+    Extra Errors.
+
 - formData (dict; optional):
     The formData.
 
@@ -35,12 +38,12 @@ Keyword arguments:
 - uiSchema (dict; optional):
     The uiSchema in the input."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, label=Component.REQUIRED, schema=Component.UNDEFINED, uiSchema=Component.UNDEFINED, formData=Component.UNDEFINED, className=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'className', 'formData', 'label', 'schema', 'style', 'uiSchema']
+    def __init__(self, id=Component.UNDEFINED, label=Component.REQUIRED, schema=Component.UNDEFINED, uiSchema=Component.UNDEFINED, formData=Component.UNDEFINED, extraErrors=Component.UNDEFINED, className=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'className', 'extraErrors', 'formData', 'label', 'schema', 'style', 'uiSchema']
         self._type = 'DashReactJsonSchemaForm'
         self._namespace = 'dash_react_json_schema_form'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'className', 'formData', 'label', 'schema', 'style', 'uiSchema']
+        self.available_properties = ['id', 'className', 'extraErrors', 'formData', 'label', 'schema', 'style', 'uiSchema']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

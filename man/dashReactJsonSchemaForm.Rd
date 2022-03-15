@@ -10,8 +10,8 @@ DashReactJsonSchemaForm is dash component to render react-json-schema-form forms
 }
 
 \usage{
-dashReactJsonSchemaForm(id=NULL, className=NULL, formData=NULL, label=NULL,
-schema=NULL, style=NULL, uiSchema=NULL)
+dashReactJsonSchemaForm(id=NULL, className=NULL, extraErrors=NULL, formData=NULL,
+label=NULL, schema=NULL, style=NULL, uiSchema=NULL)
 }
 
 \arguments{
@@ -19,6 +19,8 @@ schema=NULL, style=NULL, uiSchema=NULL)
 
 \item{className}{Character. Sets the class name of the element (the value of an element's html
 class attribute).}
+
+\item{extraErrors}{Named list. Extra Errors.}
 
 \item{formData}{Named list. The formData.}
 

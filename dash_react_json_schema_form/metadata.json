@@ -56,6 +56,13 @@
         "required": false,
         "description": "The formData."
       },
+      "extraErrors": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Extra Errors."
+      },
       "className": {
         "type": {
           "name": "string"
