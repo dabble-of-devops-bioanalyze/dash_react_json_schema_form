@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Form from "@rjsf/bootstrap-4";
-
+// import Form from "react-jsonschema-form";
+// import fields from "react-jsonschema-form-extras";
 
 /**
  * DashReactJsonSchemaForm is dash component to render react-json-schema-form forms.
@@ -16,21 +17,25 @@ export default class DashReactJsonSchemaForm extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
-    onSubmit({formData}, event) {
+    onSubmit({ formData }, event) {
         console.log('In on submit')
         console.log(formData);
         console.log(this.props)
-        this.props.setProps({formData : formData});
+        this.props.setProps({ formData: formData });
         event.preventDefault();
     }
 
     render() {
         const { id, label, setProps, formData, schema, uiSchema, extraErrors } = this.props;
         const log = (type) => console.log.bind(console, type)
-        const onSubmit = ({formData}) => console.log("yay I'm valid!");
 
         return (
-            <Form id={id} extraErrors={extraErrors} formData={this.props.formData} uiSchema={uiSchema} schema={schema}
+            <Form
+                id={id}
+                extraErrors={extraErrors}
+                formData={formData}
+                uiSchema={uiSchema}
+                schema={schema}
                 onChange={
                     /*
                      * Send the new value to the parent component.
@@ -61,26 +66,6 @@ export default class DashReactJsonSchemaForm extends Component {
                 }
                 onError={log("errors")} />
         )
-        // return (
-        //     <div id={id}>
-        //         ExampleComponent: {label}&nbsp;
-        //         <input
-        //             value={value}
-        //             onChange={
-        //                 /*
-        //                  * Send the new value to the parent component.
-        //                  * setProps is a prop that is automatically supplied
-        //                  * by dash's front-end ("dash-renderer").
-        //                  * In a Dash app, this will update the component's
-        //                  * props and send the data back to the Python Dash
-        //                  * app server if a callback uses the modified prop as
-        //                  * Input or State.
-        //                  */
-        //                 e => setProps({ value: e.target.value })
-        //             }
-        //         />
-        //     </div>
-        // );
     }
 }
 

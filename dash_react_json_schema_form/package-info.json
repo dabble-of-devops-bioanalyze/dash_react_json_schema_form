@@ -1,6 +1,6 @@
 {
   "name": "dash_react_json_schema_form",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Use React JSON Schema Form w with Dash",
   "repository": {
     "type": "git",
@@ -27,7 +27,9 @@
   "dependencies": {
     "@rjsf/bootstrap-4": "^4.1.0",
     "@rjsf/core": "^4.1.0",
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1",
+    "react-jsonschema-form": "^1.8.1",
+    "react-jsonschema-form-extras": "^0.9.72"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",

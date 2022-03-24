@@ -27,7 +27,9 @@
   "dependencies": {
     "@rjsf/bootstrap-4": "^4.1.0",
     "@rjsf/core": "^4.1.0",
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1",
+    "react-jsonschema-form": "^1.8.1",
+    "react-jsonschema-form-extras": "^0.9.72"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",

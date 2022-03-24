@@ -9,7 +9,7 @@
         "modifiers": [],
         "params": [
           {
-            "name": "{formData}",
+            "name": "{ formData }",
             "type": null
           },
           {
