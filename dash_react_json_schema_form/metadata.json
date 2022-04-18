@@ -9,7 +9,7 @@
         "modifiers": [],
         "params": [
           {
-            "name": "{ formData }",
+            "name": "{formData}",
             "type": null
           },
           {
@@ -27,6 +27,13 @@
         },
         "required": false,
         "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The children of this component"
       },
       "label": {
         "type": {
@@ -83,6 +90,63 @@
         },
         "required": false,
         "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+      },
+      "n_submit": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Number of times the `Enter` key was pressed while the input had focus.",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "n_submit_timestamp": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Last time that `Enter` was pressed.",
+        "defaultValue": {
+          "value": "-1",
+          "computed": false
+        }
+      },
+      "prevent_default_on_submit": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "The form calls preventDefault on submit events. If you want form data to\nbe posted to the endpoint specified by `action` on submit events, set\nprevent_default_on_submit to False. Defaults to True.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "loading_state": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "is_loading": {
+              "name": "bool",
+              "description": "Determines if the component is loading or not",
+              "required": false
+            },
+            "prop_name": {
+              "name": "string",
+              "description": "Holds which property is loading",
+              "required": false
+            },
+            "component_name": {
+              "name": "string",
+              "description": "Holds the name of the component that is loading",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "Object that holds the loading state object coming from dash-renderer"
       }
     }
   }

@@ -2,7 +2,7 @@
 name = "DashReactJsonSchemaForm"
 uuid = "1b08a953-4be3-4667-9a23-3adc8484a434"
 authors = ["Jillian Rowe <jillian@dabbleofdevops.com>"]
-version = "0.1.9"
+version = "0.1.10"
 
 [deps]
 Dash = "1b08a953-4be3-4667-9a23-3db579824955"

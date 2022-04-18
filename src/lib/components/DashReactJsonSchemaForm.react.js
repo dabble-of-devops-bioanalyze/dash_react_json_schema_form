@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Form from "@rjsf/bootstrap-4";
+import RBButton from 'react-bootstrap/Button';
 // import Form from "react-jsonschema-form";
 // import fields from "react-jsonschema-form-extras";
 
@@ -17,17 +18,41 @@ export default class DashReactJsonSchemaForm extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
-    onSubmit({ formData }, event) {
+    onSubmit({formData}, event) {
         console.log('In on submit')
         console.log(formData);
         console.log(this.props)
-        this.props.setProps({ formData: formData });
+        this.props.setProps({formData: formData});
         event.preventDefault();
     }
 
+
     render() {
-        const { id, label, setProps, formData, schema, uiSchema, extraErrors } = this.props;
+        const {
+            id,
+            children,
+            label,
+            setProps,
+            formData,
+            schema,
+            uiSchema,
+            extraErrors,
+            loading_state,
+            n_submit,
+            prevent_default_on_submit,
+        } = this.props;
         const log = (type) => console.log.bind(console, type)
+        console.log('Rendering')
+        console.log(children)
+        const widgets = {
+            ChildrenWidget: function (props) {
+                return (
+                    <Form.Group>
+                        {props.children}
+                    </Form.Group>
+                );
+            }
+        };
 
         return (
             <Form
@@ -36,6 +61,7 @@ export default class DashReactJsonSchemaForm extends Component {
                 formData={formData}
                 uiSchema={uiSchema}
                 schema={schema}
+                widgets={widgets}
                 onChange={
                     /*
                      * Send the new value to the parent component.
@@ -50,8 +76,6 @@ export default class DashReactJsonSchemaForm extends Component {
                     // e => setProps({ formData: e.target.formData })
                     log("changed")
                 }
-                // onChange={log("changed")}
-                // onSubmit={onSubmit}
                 onSubmit={
                     /*
                      * Send the new value to the parent component.
@@ -64,18 +88,34 @@ export default class DashReactJsonSchemaForm extends Component {
                      */
                     this.onSubmit
                 }
-                onError={log("errors")} />
+                onError={log("errors")}
+                data-dash-is-loading={
+                    (loading_state && loading_state.is_loading) || undefined
+                }
+            >
+                {children}
+                <RBButton type="submit">Submit</RBButton>
+            </Form>
         )
     }
 }
 
-DashReactJsonSchemaForm.defaultProps = {};
+DashReactJsonSchemaForm.defaultProps = {
+    prevent_default_on_submit: true,
+    n_submit: 0,
+    n_submit_timestamp: -1
+};
 
 DashReactJsonSchemaForm.propTypes = {
     /**
      * The ID used to identify this component in Dash callbacks.
      */
     id: PropTypes.string,
+
+    /**
+     * The children of this component
+     */
+    children: PropTypes.node,
 
     /**
      * A label that will be printed when this component is rendered.
@@ -117,5 +157,39 @@ DashReactJsonSchemaForm.propTypes = {
      * Dash-assigned callback that should be called to report property changes
      * to Dash, to make them available for callbacks.
      */
-    setProps: PropTypes.func
+    setProps: PropTypes.func,
+
+    /**
+     * Number of times the `Enter` key was pressed while the input had focus.
+     */
+    n_submit: PropTypes.number,
+
+    /**
+     * Last time that `Enter` was pressed.
+     */
+    n_submit_timestamp: PropTypes.number,
+
+    /**
+     * The form calls preventDefault on submit events. If you want form data to
+     * be posted to the endpoint specified by `action` on submit events, set
+     * prevent_default_on_submit to False. Defaults to True.
+     */
+    prevent_default_on_submit: PropTypes.bool,
+    /**
+     * Object that holds the loading state object coming from dash-renderer
+     */
+    loading_state: PropTypes.shape({
+        /**
+         * Determines if the component is loading or not
+         */
+        is_loading: PropTypes.bool,
+        /**
+         * Holds which property is loading
+         */
+        prop_name: PropTypes.string,
+        /**
+         * Holds the name of the component that is loading
+         */
+        component_name: PropTypes.string
+    })
 };
