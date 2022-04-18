@@ -37,7 +37,7 @@ form = html.Div(
     [
         dash_react_json_schema_form.DashReactJsonSchemaForm(
             id="form",
-            children=[data_table, html.Br()],
+            children=[dbc.InputGroup([data_table], className="mb-3"), html.Br()],
             schema={
                 "title": "Todo",
                 "type": "object",
@@ -48,6 +48,7 @@ form = html.Div(
                         "title": "Field Title",
                         "default": "A new task",
                     },
+                    "row-select-my-data-table": {"type": "boolean"},
                     "firstName": {"type": "string"},
                     "done": {"type": "boolean", "title": "Done?", "default": False},
                 },
