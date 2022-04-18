@@ -37,7 +37,7 @@ form = html.Div(
     [
         dash_react_json_schema_form.DashReactJsonSchemaForm(
             id="form",
-            # children=[data_table, html.Br()],
+            children=[data_table, html.Br()],
             schema={
                 "title": "Todo",
                 "type": "object",
